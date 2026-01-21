@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter',Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+/* Cabeçalho */
+.hero {
+  position: relative;   /* foi posto pra o icone ficar preso no inicio */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 80px;
+  gap: 60px;
+}
+
+/* Texto à esquerda */
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 68px;
+  line-height: 1.1;
+}
+
+.hero-text h2 {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Banner grande */
+.hero-image {
+  flex: 1;
+  min-height: 80vh;
+
+  background-image: 
+    linear-gradient(
+      to right,
+      rgba(15, 15, 15, 0.95) 0%,
+      rgba(15, 15, 15, 0.4) 25%,
+      rgba(15, 15, 15, 0.2) 50%,
+      rgba(15, 15, 15, 0) 100%
+    ),
+    url("banner.JPEG");
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+}
+
+
+/* efeitinho no titlo enzo b */
+.hero-text h1 span {
+  background: linear-gradient(90deg, #ffffff, #aaaaaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* linha separando texto */
+.hero-text::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #ffffff;
+  margin-top: 24px;
+}
+
+/* feito ao carregar */
+
+.hero-text {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ícone social no topo */
+.social-top {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+}
+
+
+/* edicao dos icones de redes sociais */
+.social-top a {
+  color: #ffffff;
+  font-size: 50px;
+  transition: 0.2s;
+  
+}
+
+.social-top a:hover {
+  opacity: 0.7;
+  
+}
+
+/* ===== CARTINHAS DO PORTFOLIO  ===== */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background-color: #151515;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* imagem */
+.project-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.project-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.project-image img.active {
+  opacity: 1;
+}
+
+/* texto */
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.project-info p {
+  font-size: 15px;
+  color: #aaaaaa;
+}
+
+/* ===== MODAL ===== */
+
+
+
+.modal-content {
+  max-width: 800px;
+  width: 90%;
+  background: #111;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* O close assim fica fora do quadrado */
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 12px;
+  border-radius: 50%;
+  z-index: 20;
+}
+
+
+ 
+/*css da secao portfolio pra arrumar os containers */
+.portfolio {
+  padding: 120px 80px;
+}
+
+.portfolio h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+/* centralizacao do grid */
+.portfolio-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* animacao suave */ 
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* esse bloco foi criado pra conter a imagem caso ela seja mt grande
+e o X ficar fora da tela */
+.modal-content {
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;   
+  overflow-y: auto;   
+  background: #111;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+}
+
+
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* ===== SETINHAS DO MODAL ===== */
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 32px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+  z-index: 20;
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.nav.prev {
+  left: 10px;
+}
+
+.nav.next {
+  right: 10px;
+}
+
+/* Ajuste pra telas menores */
+@media (max-width: 768px) {
+  .nav.prev {
+    left: 10px;
+  }
+  .nav.next {
+    right: 10px;
+  }
+}
+
+/* contador de imgs */ 
+.modal-counter {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  z-index: 20;
+  user-select: none;
+}
+
+/* sobre mim */ 
+.about-me-section {
+  padding: 80px 20px;
+  background-color: #0f0f0f; /* mesmo fundo do body */
+}
+
+.about-me-section {
+  padding: 80px 20px;
+  background-color: #0f0f0f;
+}
+
+.about-me-card {
+  display: flex;
+  align-items: stretch; /* <- IMPORTANTE: faz a linha ocupar a altura do card */
+  background-color: #151515;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+}
+
+/* Linha decorativa à esquerda */
+.about-me-line {
+  width: 6px;
+  background: linear-gradient(180deg, #ffffff, #aaaaaa);
+  border-radius: 3px;
+  margin-right: 24px;
+  flex-shrink: 0; /* garante que a linha não encolha */
+}
+
+/* Conteúdo do card */
+.about-me-content {
+  text-align: left;
+}
+
+.about-me-content h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.about-me-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+}

@@ -1,29 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enzo Borges | Portfólio</title>
+  <meta charset="UTF-8" />
+  <title>Meu Portfólio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <h1>Enzo Borges</h1>
-    <p>Desenvolvedor em formação | Análise e Desenvolvimento de Sistemas</p>
+  <!-- HERO / TOPO -->
+  <header class="hero">
 
-    <h2>Sobre mim</h2>
-    <p>
-        Sou formado em Design Gráfico e atualmente curso Análise e Desenvolvimento de Sistemas.
-        Estou focado em programação, com projetos em HTML, CSS e JavaScript.
-    </p>
+    <div class="social-top">
+      <a href="https://www.instagram.com/enzobcaixeta/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
 
-    <h2>Projetos</h2>
-    <ul>
-        <li>Calculadora em JavaScript</li>
-        <li>Sistema de Estacionamento</li>
-    </ul>
+    <div class="hero-text">
+      <h1><span>Enzo</span> Borges</h1>
+      <h2>Designer / Programador</h2>
+      <p>
+        Mini lorem ipsum.
+      </p>
+      <a href="#portfolio" class="btn">Ver Portfólio</a>
+    </div>
 
-    <h2>Contato</h2>
-    <p>GitHub: <a href="https://github.com/enzoborgescaixeta">github.com/enzoborgescaixeta</a></p>
+    <div class="hero-image"></div>
+  </header>
+
+  <!-- sobre mim -->
+<section class="about-me-section">
+  <div class="about-me-card">
+    <div class="about-me-line"></div> <!-- linha decorativa -->
+    <div class="about-me-content">
+      <h3>Sobre mim</h3>
+      <p>
+        What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+      </p>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- PORTFÓLIO -->
+<div class="portfolio-grid">
+  <!-- Card 1 -->
+  <div class="project-card" data-title="Projeto 1" data-description=
+  "Descrição projeto x.">
+    <div class="project-image">
+      <img src="img1a.png" class="active">
+      <img src="img1b.png">
+    </div>
+    <div class="project-info">
+      <h3>Projeto 1</h3>
+      <p>Descrição resumida proj x.</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="project-card" data-title="Projeto 2" data-description=
+  "Descrição projeto x.">
+    <div class="project-image">
+      <img src="img2a.png" class="active">
+      <img src="img2b.png">
+    </div>
+    <div class="project-info">
+      <h3>Projeto 2</h3>
+      <p>Descrição resumida proj x.</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="project-card" data-title="Projeto 3" data-description=
+  "Descrição projeto x.">
+    <div class="project-image">
+      <img src="img3a.png" class="active">
+      <img src="img3b.png">
+    </div>
+    <div class="project-info">
+      <h3>Projeto 3</h3>
+      <p>Descrição resumida proj x.</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="project-card" data-title="Projeto 4" data-description=
+  "Descrição projeto x.">
+    <div class="project-image">
+      <img src="img4a.png" class="active">
+      <img src="img4b.png">
+    </div>
+    <div class="project-info">
+      <h3>Projeto 4</h3>
+      <p>Descrição resumida proj x.</p>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <button class="nav prev">&#10094;</button>
+    <button class="nav next">&#10095;</button>
+
+    <img id="modal-img" src="" alt="Project Image">
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+
+    <div id="modal-counter" class="modal-counter">1 / 1</div>
+  </div>
+</div>
+
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+  
+  
 
 </body>
 </html>
